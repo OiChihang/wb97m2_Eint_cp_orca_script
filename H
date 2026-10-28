@@ -1,0 +1,49 @@
+# wB97M(2) Interaction Energy with BSSE Correction
+# chyen.dicp.cas
+
+%maxcore 1000
+%pal nprocs 6 end
+
+%Compound
+
+# Announcement
+variable basis   = "def2-TZVPP";
+variable auxJ    = "def2/J";
+variable auxC    = "def2-TZVPP/C";
+variable charge  = 0;
+variable mult    = 1;
+
+Variable E_AB_bAB = 0.0;
+Variable E_A_bAB = 0.0;
+Variable E_B_bAB = 0.0;
+Variable E_int = 0.0;
+Variable HartTocm = 219480;
+
+Variable dimerBase0;
+Variable monomerA_Base0;
+Variable monomerB_Base0;
+Write2String(dimerBase0, "%s_dimer_scf", basenames[0]);
+Write2String(monomerA_Base0, "%s_monomerA_scf", basenames[0]);
+Write2String(monomerB_Base0, "%s_monomerB_scf", basenames[0]);
+
+Variable dimerBase0_gbw;
+Variable monomerA_Base0_gbw;
+Variable monomerB_Base0_gbw;
+Write2String(dimerBase0_gbw, "%s_dimer_scf.gbw", basenames[0]);
+Write2String(monomerA_Base0_gbw, "%s_monomerA_scf.gbw", basenames[0]);
+Write2String(monomerB_Base0_gbw, "%s_monomerB_scf.gbw", basenames[0]);
+
+Variable dimerBase1;
+Variable monomerA_Base1;
+Variable monomerB_Base1;
+Write2String(dimerBase1, "%s_dimer1", basenames[0]);
+Write2String(monomerA_Base1, "%s_monomerA1", basenames[0]);
+Write2String(monomerB_Base1, "%s_monomerB1", basenames[0]);
+
+# --- task1: dimer scf gbw ---
+New_Step
+  ! wB97M-V &{basis} &{auxJ} &{auxC} RIJCOSX DEFGRID3 VERYTIGHTSCF ANGS
+  %scf
+      STABPerform    true
+      MaxIter        300
+  end

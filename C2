@@ -1,0 +1,11 @@
+  *
+Step_End
+
+# --- task4: A_bAB E_wB97M(2) ---
+New_Step
+  ! wB97M(2) &{basis} &{auxJ} &{auxC} RIJCOSX DEFGRID3 VERYTIGHTSCF ANGS
+     %moinp "&{monomerA_Base0_gbw}"
+     %mp2 RI on end
+     %base "&{monomerA_Base1}"
+     *xyz &{charge} &{mult}
+

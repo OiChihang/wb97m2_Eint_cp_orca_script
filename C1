@@ -1,0 +1,11 @@
+  *
+Step_End
+
+# --- task2: dimer E_wB97M(2) ---
+New_Step
+  ! wB97M(2) &{basis} &{auxJ} &{auxC} RIJCOSX DEFGRID3 VERYTIGHTSCF ANGS
+     %moinp "&{dimerBase0_gbw}"
+     %mp2 RI on end
+     %base "&{dimerBase1}"
+     *xyz &{charge} &{mult}
+

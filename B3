@@ -1,0 +1,15 @@
+  *
+Step_End
+Alias monomerA
+
+# --- task5: monomerB scf gbw ---
+
+New_Step
+  ! wB97M-V &{basis} &{auxJ} &{auxC} RIJCOSX DEFGRID3 VERYTIGHTSCF ANGS
+  %scf
+      STABPerform    true
+      MaxIter        300
+  end
+  %base "&{monomerB_Base0}"
+  *xyz &{charge} &{mult}
+

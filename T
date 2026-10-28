@@ -1,0 +1,18 @@
+  *
+Step_End
+Alias monomerB
+
+Read E_AB_bAB   = SCF_ENERGY[dimer];
+Read E_A_bAB = SCF_ENERGY[monomerA];
+Read E_B_bAB = SCF_ENERGY[monomerB];
+
+E_int = E_AB_bAB - E_A_bAB - E_B_bAB;
+E_int = HartTocm * E_int;
+
+print("\n");
+print("        BSSE COUNTERPOISE CORRECTION SUMMARY        \n");
+print("\n");
+print("  Dimer energy        : %16.10lf a.u.\n", E_AB_bAB);
+print("  Interaction energy  : %16.10lf cm**-1\n", E_int);
+
+End

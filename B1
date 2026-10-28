@@ -1,0 +1,3 @@
+  %base "&{dimerBase0}"
+  *xyz &{charge} &{mult}
+
