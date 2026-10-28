@@ -4,17 +4,10 @@
 # SETTINGS — edit here
 #==========================================================
 
-#ORCA="/path/to/orca/orca"
+ORCA="/path/to/orca/orca"
 
-#export PATH="/path/to/orca:$PATH"
-#export LD_LIBRARY_PATH="/path/to/orca/lib:${LD_LIBRARY_PATH:-}"
-
-export PATH=/work1/private/licw/orca_6_1_0_linux_x86-64_shared_openmpi418_avx2:$PATH
-export LD_LIBRARY_PATH=/home/yanqihang/library:/work1/private/licw/orca_6_1_0_linux_x86-64_shared_openmpi418_avx2:$LD_LIBRARY_PATH
-export PATH=/work1/private/tzwang/openmpi/openmpi-4.1.8/bin:$PATH
-export LD_LIBRARY_PATH=/work1/private/tzwang/openmpi/openmpi-4.1.8/lib:/home/licw/lib:$LD_LIBRARY_PATH
-
-ORCA="/work1/private/licw/orca_6_1_0_linux_x86-64_shared_openmpi418_avx2/orca"
+export PATH="/path/to/orca:$PATH"
+export LD_LIBRARY_PATH="/path/to/orca/lib:${LD_LIBRARY_PATH:-}"
 
 natom=8              		# atoms per structure
 k=4                  		# max ORCA jobs at once
